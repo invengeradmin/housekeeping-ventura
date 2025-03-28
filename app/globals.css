@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 41 76% 52%; /* Ventura Gold */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 41 76% 52%; /* Ventura Gold */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 41 76% 52%; /* Ventura Gold */
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 41 76% 52%; /* Ventura Gold */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-medium text-white;
+  }
+
+  .status-badge-done {
+    @apply status-badge bg-status-done;
+  }
+
+  .status-badge-not-started {
+    @apply status-badge bg-status-notStarted;
+  }
+
+  .status-badge-in-progress {
+    @apply status-badge bg-status-inProgress;
+  }
+
+  .status-badge-overdue {
+    @apply status-badge bg-status-overdue;
+  }
+
+  .room-card {
+    @apply bg-white rounded-lg shadow-sm overflow-hidden border-l-4 p-4;
+  }
+
+  .room-card-not-started {
+    @apply room-card border-status-notStarted;
+  }
+
+  .room-card-in-progress {
+    @apply room-card border-status-inProgress;
+  }
+
+  .room-card-done {
+    @apply room-card border-status-done;
+  }
+
+  .room-card-overdue {
+    @apply room-card border-status-overdue;
+  }
+
+  .btn {
+    @apply px-4 py-3 rounded-lg font-medium text-white shadow-sm transition-all duration-200 flex items-center justify-center;
+  }
+
+  .btn-entry {
+    @apply btn bg-status-inProgress hover:bg-status-inProgress/90;
+  }
+
+  .btn-note {
+    @apply btn bg-ventura-gold hover:bg-ventura-goldDark;
+  }
+
+  .btn-success {
+    @apply btn bg-status-done hover:bg-status-done/90;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ventura-gold;
+  }
+}
+
